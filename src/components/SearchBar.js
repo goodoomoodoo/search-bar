@@ -1,7 +1,7 @@
 import React from 'react';
 import '../style/SearchBar.css';
 import { dataPromise } from '../fetch/data';
-import { createUserTree } from '../make/CreateUserTree';
+import DataTree from '../make/DataTree';
 
 class SearchBar extends React.Component
 {
@@ -15,19 +15,19 @@ class SearchBar extends React.Component
         }
 
         this.handleSearchTerm = this.handleSearchTerm.bind( this );
+        this.filterSearch = this.filterSearch.bind( this );
     }
 
     componentDidMount()
     {
         dataPromise
             .then( json => {
-                let userTree = createUserTree( json );
+                let userTree = new DataTree();
+                userTree.initialize( json );
 
                 this.setState({
-                    user: userTree
+                    user: userTree.rootArr
                 });
-
-                console.log( userTree );
             })
             .catch( e => {
                 console.log( e );
@@ -41,44 +41,63 @@ class SearchBar extends React.Component
         });
     }
 
-    render()
+    // this algorithm sucks. need revision
+    filterSearch()
     {
-        const filterResult = () => {
-            let keyword = this.state.searchTerm.substring( 0, 1 );
-
-            if( this.state.user[ keyword ] )
+        let keyword = this.state.searchTerm;
+        let currentState = this.state.user;
+        let lastNameList = [
             {
-                return (
-                    <ul>
-                        { 
-                            this.state.user[ keyword ].term.map( ( user, index ) => 
-                                <li key={ index }>{ user }</li>
-                            )
-                        }
-                    </ul>
-                )
+                name: ''
             }
+        ];
+        let termsCheck = false;
+        let i = 0
 
-            return (
-                <ul>
-                    <li>No matches</li>
-                </ul>
-            )
+        // iterate through the tree with char of the keyword
+        for( ; i < keyword.length ; i++ )
+        {
+            let firstChar = keyword.substring( i, i + 1 );
+
+            if( !currentState[ firstChar ] )
+                break;
+            else    
+            {
+                lastNameList = currentState[ firstChar ].list ;
+                currentState = currentState[ firstChar ].nextRoot;
+            }
         }
 
-        // React component cannot take a function but an element, which is why this declaration is here
-        const NewComp = filterResult();
+        // final check when the list is narrowed down
+        for( let n in lastNameList )
+        {
+            termsCheck = termsCheck || lastNameList[ n ].name.includes( keyword );
+        }
 
-        return(
+        // return names if the keyword matches 
+        if( i === 0 || !termsCheck )
+            return [{name: 'No matches'}];
+        else
+            return lastNameList;
+    }
+
+    render()
+    {
+        let nameList = this.filterSearch();
+
+        return (
             <div>
                 <form>
-                    <input type='text' name='keyword' onChange={ this.handleSearchTerm } value={ this.state.searchTerm } />
-                    
+                    <input type='text' name='keyword' value={ this.state.searchTerm } onChange={ this.handleSearchTerm } />
+
                     {
                         this.state.searchTerm !== '' &&
-                        NewComp
+                        nameList.map( ( user, index ) => (
+                            <li key={ index }>{ user.name }</li>
+                        ))
                     }
                 </form>
+
             </div>
         );
     }
