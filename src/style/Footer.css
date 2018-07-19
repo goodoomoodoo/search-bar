@@ -1,0 +1,18 @@
+.container {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2em;
+    background: linear-gradient( to bottom, #444 20%, #4a4a4a 25%, #4a4a4a);
+}
+
+.link {
+    position: relative;
+    color: #ccc;
+    margin-top: .5em;
+}
+
+.link a {
+    color: currentColor;
+    cursor: pointer;
+}

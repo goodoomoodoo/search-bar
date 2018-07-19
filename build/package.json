@@ -1,0 +1,14 @@
+{
+    "name": "build",
+    "private": true,
+    "dependencies": {
+        "express": "^4.16.3",
+        "node-fetch": "^2.1.2",
+        "react": "^16.4.1",
+        "react-css-modules": "^4.7.4",
+        "react-dom": "^16.4.1",
+        "react-redux": "^5.0.7",
+        "react-router-dom": "^4.3.1",
+        "redux": "^4.0.0"
+    }
+}

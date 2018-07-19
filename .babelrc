@@ -1,0 +1,19 @@
+{
+    "presets": [
+        "env",
+        "react"
+    ],
+    "env": {
+        "lib": {
+            "plugins": [
+                [
+                    "css-modules-transform",
+                    {
+                        "generateScopedName": "[local]__[name]__[hash:base64:5]",
+                        "extensions": [".css"]
+                    }
+                ]
+            ]
+        }
+    }
+}

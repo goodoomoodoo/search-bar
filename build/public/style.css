@@ -1,0 +1,226 @@
+body {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container__HeadBar__3pHCJ input {
+    margin-top: 1em;
+}
+
+.container__HeadBar__3pHCJ form {
+    position: relative;
+    margin: 0 auto;
+    width: 15em;
+}
+
+.container__HeadBar__3pHCJ {
+    position: absolute;
+    width: 100%;
+    top: 1em;
+    z-index: 1;
+}
+
+.container__HeadBar__3pHCJ ul {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.container__HeadBar__3pHCJ a {
+    text-indent: .5em;
+    padding: .2em;
+    text-decoration: none;
+    color: black;
+    display: block;
+    text-align: left;
+    background: #e3e3e3;
+    cursor: pointer;
+}
+
+.container__HeadBar__3pHCJ a:hover {
+    background: #ccc;
+}
+h1 {
+    font-weight: lighter;
+    color: #555;
+}
+
+.grid_padding__Display__1Iask {
+    padding: 1em;
+}
+
+.close__Display__PRTRt {
+    position: absolute;
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 50%;
+    box-shadow: 0 0 .3em #888;
+    font-size: 1.3em;
+    right: 9em;
+    color: #555;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.close__Display__PRTRt:hover {
+    background: #eee;
+    color: #222;
+}
+
+.title__Display__YV17F {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+
+.container__Display__12SNb {
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 8vw;
+    margin-top: 5em;
+    text-align: center;
+    width: 80%;
+    max-width: 80em;
+}
+
+.caption__Display__2Vswa {
+    color: #555;
+    padding: .5em;
+}
+
+.content__Display__3hqqw {
+    display: inline-block;
+    padding: .4em;
+    box-shadow: 0 0 .3em #888;
+    border-radius: .3em;
+}
+
+.grid_container__Display__2NYHT {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 21em;
+    width: 40em;
+    display: grid;
+    grid-template-columns: 10% auto auto auto auto;
+    box-shadow: 0 0 .5em #888;
+    border-radius: .3em;
+    padding: 1.5em;
+}
+
+.grid_header__Display__6f97O {
+    margin-top: .75em;
+    padding-left: 1em;
+    grid-column: 1 / 3;
+    text-align: left;
+    font-size: 1.4em;
+    color: #555;
+}
+
+.grid_street__Display__22iiI {
+    grid-column: 2 / 3;
+    padding: 1em;
+    text-align: left;
+}
+
+.grid_street__Display__22iiI .content__Display__3hqqw {
+    width: 12em;
+}
+
+.grid_suite__Display__ET16N {
+    padding: 1em;
+}
+
+.grid_city__Display__Yc5Gp {
+    grid-column: 2 / 3;
+    text-align: left;
+    padding: 1em;
+}
+
+.grid_zipcode__Display__1NhWo {
+    padding: 1em;
+}
+
+.grid_contact__Display__3nCBp {
+    grid-column: 2/4;
+    padding: 1em;
+    text-align: left;
+}
+
+.menu__Display__1cXwl {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    margin-top: 10vw;
+}
+
+.menu__Display__1cXwl h2 {
+    color: #555;
+    font-variant: small-caps;
+    border-bottom: solid 1px currentColor;
+}
+
+.user_item__Display__4zMXg {
+    position: relative;
+    margin: 1em;
+    height: 10em;
+    width: 12em;
+    display: inline-block;
+    padding: 2em;
+    color: #555;
+    border-radius: .3em;
+    box-shadow: 0 0 .7em #888;
+    cursor: pointer;
+}
+
+.user_item__Display__4zMXg h3 {
+    height: 2em;
+}
+
+.slogan__Display__3g3ae {
+    position: relative;
+    width: 80%;
+    max-width: 60em;
+    margin-top: 12vw;
+    padding: 1em;
+    font-size: 3em;
+}
+.container__Footer__3voyI {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2em;
+    background: linear-gradient( to bottom, #444 20%, #4a4a4a 25%, #4a4a4a);
+}
+
+.link__Footer__3Q2Fq {
+    position: relative;
+    color: #ccc;
+    margin-top: .5em;
+}
+
+.link__Footer__3Q2Fq a {
+    color: currentColor;
+    cursor: pointer;
+}
+.container__Message__3lEdv {
+    position: relative;
+    width: 35em;
+    margin: 0 auto;
+    margin-bottom: 8vw;
+}
+
+.container__Message__3lEdv h1 {
+    font-weight: normal;
+}
+
+.container__Message__3lEdv p {
+    line-height: 1.2em;
+    background: #e3e3e3;
+    color: #555;
+    padding: 2em;
+    text-align: justify;
+    text-indent: 1.5em;
+    border-radius: .5em;
+}
